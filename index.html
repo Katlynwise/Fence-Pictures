@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fence Preview</title>
+<style>
+body{
+margin:0;
+text-align:center;
+font-family:Arial;
+}
+img{
+max-width:100%;
+height:auto;
+}
+</style>
+</head>
+
+<body>
+
+<img id="preview" src="" alt="Fence Preview">
+
+<script>
+
+function getParam(name){
+let params = new URLSearchParams(window.location.search);
+return params.get(name);
+}
+
+let style = getParam("style") || "wood";
+let height = getParam("height") || "4ft";
+
+/* CHANGE THIS TO YOUR IMAGE LOCATION */
+let baseURL = "https://example.com/fences/";
+
+let image = baseURL + style + "_" + height + ".png";
+
+document.getElementById("preview").src = image;
+
+</script>
+
+</body>
+</html>
